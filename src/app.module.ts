@@ -6,6 +6,11 @@ import { PonenteModule } from './ponente/ponente.module';
 import { EventoModule } from './evento/evento.module';
 import { AsistenteModule } from './asistente/asistente.module';
 import { AuditorioModule } from './auditorio/auditorio.module';
+import { PonenteEntity } from './ponente/ponente.entity/ponente.entity';
+import { EventoEntity } from './evento/evento.entity/evento.entity';
+import { AsistenteEntity } from './asistente/asistente.entity/asistente.entity';
+import { AuditorioEntity } from './auditorio/auditorio.entity/auditorio.entity';
+
 
 @Module({
   imports: [
@@ -16,7 +21,7 @@ import { AuditorioModule } from './auditorio/auditorio.module';
         username: 'postgres',
         password: 'postgres',
         database: 'parcial',
-        entities: [],
+        entities: [PonenteEntity, EventoEntity, AsistenteEntity, AuditorioEntity],
         dropSchema: true,
         synchronize: true
       }),
@@ -24,7 +29,6 @@ import { AuditorioModule } from './auditorio/auditorio.module';
     EventoModule,
     AsistenteModule,
     AuditorioModule,
-    //MuseumArtworkModule,
   ],
   controllers: [AppController],
   providers: [AppService],
